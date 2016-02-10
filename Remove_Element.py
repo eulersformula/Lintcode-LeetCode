@@ -41,6 +41,6 @@ class Solution:
                 lenA -= 1
             else:
                 st += 1
-        st = A.index(elem)
+        st = A.index(elem) #list/string.index() returns the FIRST appearance of element. It will raise an error if not found.
         del A[st:]
         return lenA
