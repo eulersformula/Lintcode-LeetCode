@@ -20,7 +20,7 @@ class Solution:
           else:
             if len(stack) == 0:
               return False
-            left = stack.pop()
+            left = stack.pop() #list.pop() returns the last element and delete it in place
             if not (p == ')' and left == '(' or p == ']' and left == '[' or p == '}' and left == '{'):
               return False
         if len(stack) != 0:
