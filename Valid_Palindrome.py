@@ -10,7 +10,7 @@
 #Challenge
 #O(n) time without extra memory.
 
-#Method 1: Extra memory is allowed
+#Method 1: Extra memory O(n) is allowed, O(n) time
 class Solution:
     # @param {string} s A string
     # @return {boolean} Whether the string is a valid palindrome
@@ -21,7 +21,7 @@ class Solution:
         return sValid == sValid[::-1] #notice that for a string s, s[::-1] returns the reversed string
 
 
-#Method 2: Extra memory is not allowed
+#Method 2: Extra memory is not allowed, O(n) time
 class Solution:
     # @param {string} s A string
     # @return {boolean} Whether the string is a valid palindrome
