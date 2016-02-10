@@ -4,6 +4,11 @@
 #Given n = 3, a solution set is:
 #"((()))", "(()())", "(())()", "()(())", "()()()"
 
+#Method 1: Recursion. Consider the first pair of parenthesis. The problem can be broken up into:
+#( i pairs of parentheses inside first pair ) (n - i - 1) pairs of parentheses on the right
+#i = 0, 1, ..., n - 1
+#Perhaps dynamic programming can be better.
+
 class Solution:
     # @param {int} n n pairs
     # @return {string[]} All combinations of well-formed parentheses
