@@ -33,7 +33,7 @@ class Solution:
         lenA = len(A)
         if elem not in A:
             return lenA
-        st, ed = 0, len(A) - 1
+        st, ed = 0, lenA - 1
         while st <= ed:
             if A[st] == elem:
                 A[st], A[ed] = A[ed], A[st]
