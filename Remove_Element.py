@@ -21,3 +21,26 @@ class Solution:
             else:
                 st += 1
         return len(A)
+
+#Method 2: Head-tail swap, like partition in Quicksort (probably this is intended to be used).
+class Solution:
+    """
+    @param A: A list of integers
+    @param elem: An integer
+    @return: The new length after remove
+    """
+    def removeElement(self, A, elem):
+        lenA = len(A)
+        if elem not in A:
+            return lenA
+        st, ed = 0, len(A) - 1
+        while st <= ed:
+            if A[st] == elem:
+                A[st], A[ed] = A[ed], A[st]
+                ed -= 1
+                lenA -= 1
+            else:
+                st += 1
+        st = A.index(elem)
+        del A[st:]
+        return lenA
