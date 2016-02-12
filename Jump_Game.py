@@ -26,3 +26,16 @@ class Solution:
                     if i + j < lA:
                         dp[i + j] = True
         return dp[-1]
+
+#Method 2: Greedy Algorithm. Time Complexity: O(n), Space Complexity: O(1).
+class Solution:
+    # @param A, a list of integers
+    # @return a boolean
+    def canJump(self, A):
+        maxSteps = A[0]
+        for i in xrange(1, len(A)):
+            if maxSteps > 0: #you have some way to move to this index
+                maxSteps = max(maxSteps - 1, A[i]) #At most how many steps you can still move from this index
+            else:
+                return False
+        return True
