@@ -10,9 +10,22 @@
 #Given 2, return 1
 #Given 10, return 34
 
-#Method 1: Recursion. Very bad implementation!
+#Method 1: Recursion. Very bad implementation! Won't pass all test cases due to time limit.
 #Time Complexity: T(n) = T(n-1) + T(n-2), which is exponential. 
 #Space Complexity: O(n) if we consider the function call stack size, otherwise O(1).
+
+class Solution:
+    # @param n: an integer
+    # @return an integer f(n)
+    def fibonacci(self, n):
+        if n <= 0:
+            return None
+        if n == 1:
+            return 0
+        if n == 2:
+            return 1
+        return self.fibonacci(n - 1) + self.fibonacci(n - 2)
+
 
 #Method 2: DP. 
 #Time Complexity: O(n). Space Complexity: O(1).
@@ -21,7 +34,6 @@ class Solution:
     # @param n: an integer
     # @return an integer f(n)
     def fibonacci(self, n):
-        # write your code here
         if n <= 0:
             return None
         if n == 1:
