@@ -18,10 +18,6 @@
 #       4
 
 #Method 1: Compare root value.
-
-
-
-#Method 2: Compare tree length.
 """
 Definition of TreeNode:
 class TreeNode:
@@ -29,6 +25,30 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
+class Solution:
+    # @param T1, T2: The roots of binary tree.
+    # @return: True if T2 is a subtree of T1, or false.
+    def isIdentical(self, T1, T2):
+        if T1 == None and T2 == None:
+            return True
+        if T1 == None or T2 == None:
+            return False
+        if T1.val == T2.val:
+            return self.isIdentical(T1.left, T2.left) and self.isIdentical(T1.right, T2.right)
+        return False
+        
+    def isSubtree(self, T1, T2):
+        # write your code here
+        if T2 == None:
+            return True
+        if T1 == None:
+            return False
+        flag = False
+        if T1.val == T2.val:
+            flag = self.isIdentical(T1, T2)
+        return flag or self.isSubtree(T1.left, T2) or self.isSubtree(T1.right, T2)
+
+#Method 2: Compare tree length.
 class Solution:
     # @param T1, T2: The roots of binary tree.
     # @return: True if T2 is a subtree of T1, or false.
