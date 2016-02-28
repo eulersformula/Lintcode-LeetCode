@@ -12,8 +12,7 @@ class Solution:
     def maxSubArray(self, nums):
         if nums == None:
             return None
-        lNums = len(nums)
-        if lNums == 0:
+        if len(num) == 0:
             return None
         maxSum = [nums[0], nums[0]]
         for i in nums[1:]:
