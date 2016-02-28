@@ -10,9 +10,7 @@ class Solution:
     @return: An integer denote the sum of maximum subarray
     """
     def maxSubArray(self, nums):
-        if nums == None:
-            return None
-        if len(num) == 0:
+        if nums == None or len(nums) == 0:
             return None
         maxSum = [nums[0], nums[0]]
         for i in nums[1:]:
