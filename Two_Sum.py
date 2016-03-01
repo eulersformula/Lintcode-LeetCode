@@ -25,3 +25,5 @@ class Solution:
             if target - n in rec: #updating hash table and searching for result in the same run.
                 return [rec[target - n] + 1, i + 1]
             rec[n] = i
+
+#Method 2: Sorting and binary search. Space Complexity: O(n). Time Complexity: O(nlog(n)).
