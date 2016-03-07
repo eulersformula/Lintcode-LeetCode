@@ -22,11 +22,10 @@ class Solution:
                   Reverse it in-place.
     """
     def reverse(self, head):
-        prev = None #notice the use of anchor node
-        cur = head
-        while cur != None:
-            tmp = cur.next
-            cur.next = prev
-            prev = cur
-            cur = tmp
+        prev = None
+        while head != None:
+            tmp = head.next
+            head.next = prev
+            prev = head
+            head = tmp
         return prev
