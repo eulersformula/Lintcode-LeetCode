@@ -28,7 +28,7 @@ class Solution:
             self.invertBinaryTree(root.left)
             self.invertBinaryTree(root.right)
 
-#Method 2: Iterative (How to assess evrery node in a tree without recursion? Store all nodes in a list!)
+#Method 2: Iterative (How to assess evrery node in a tree without recursion? Store all nodes in a list using BFS!)
 class Solution:
     # @param root: a TreeNode, the root of the binary tree
     # @return: nothing
