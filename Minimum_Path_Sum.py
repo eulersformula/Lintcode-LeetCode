@@ -1,8 +1,15 @@
+#Two times
+
 #Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
 #Note
 #You can only move either down or right at any point in time.
 
-#Standard dynamic programming problem. I did the calculation in place which will change grid matrix. Need to ask if this is allowed. Otherwise can require a new matrix to store the results.
+#This is a classical dynamic programming problem. I did the calculation in place which will change grid matrix. Need to ask if this is allowed. Otherwise can require a new matrix to store the results.
+
+#Key points are:
+#First, initialize the first row and first column.
+#Second, calculate the shortest path for each point from top to bottom, from left to right. 
+
 class Solution:
     """
     @param grid: a list of lists of integers.
