@@ -14,10 +14,10 @@ class Solution:
         if n > 1:
             st, ed = 0, n - 1
             while st < ed:
-                if nums[st] & 1 == 0:
+                if not (nums[st] & 1):
                     nums[st], nums[ed] = nums[ed], nums[st]
                     ed -= 1
-                elif nums[ed] & 1 == 1:
+                elif nums[ed] & 1:
                     nums[st], nums[ed] = nums[ed], nums[st]
                     st += 1
                 else:
