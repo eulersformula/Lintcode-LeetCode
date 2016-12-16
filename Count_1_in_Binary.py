@@ -18,7 +18,7 @@ class Solution:
             num = num >> 1
         return cnt
 
-#Solution 2: [x & (x - 1)] will make the last bit 1 to be 0. O(m) time, m is the number of bits of 1. This doesn't quite seem to work for 64-bit system.
+#Solution 2: [x & (x - 1)] will make the last bit 1 to be 0. O(m) time, m is the number of bits of 1. This doesn't quite seem to work for python.
 class Solution:
     # @param num: an integer
     # @return: an integer, the number of ones in num
