@@ -33,8 +33,13 @@ for v in val_counts:
         break
 
 # Optimal Solution: O(N) time complexity and O(1) additional space complexity
-# Use bit-wise XOR. The XOR of two elements is 0 if both elements are the same and the XOR of a number x with 0 is x. XOR of all elements gives us odd occurring elements.  
-# Get List
+# Use bit-wise XOR. It has the following properties:
+# Commutative: A ^ B = B ^ A
+# Associative: (A ^ B) ^ C = A ^ (B ^ C)
+# Identity element: A ^ 0 = A
+# Self-inverse: A ^ A = 0
+# XOR of all elements gives odd occurring elements by applying commutative & associative properties to cancel out all elements appearing even times.
+
 list_1 = eval(input())
 # Please write your code here
 res = 0
