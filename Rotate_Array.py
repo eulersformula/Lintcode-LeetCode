@@ -43,10 +43,6 @@ class Solution:
         return res
 
 # SOLUTION 2
-from typing import (
-    List,
-)
-
 class Solution:
     """
     @param nums: an array
@@ -61,4 +57,31 @@ class Solution:
             return nums[(-cut_off):] + nums[:(-cut_off)]
         # else no need to rotate
         return nums
+
+# Solution 3:
+class Solution:
+    """
+    @param nums: an array
+    @param k: an integer
+    @return: rotate the array to the right by k steps
+    """
+    def rotate(self, nums: List[int], k: int) -> List[int]:
+        # Write your code here
+        n_nums = len(nums)
+        k = k % n_nums
+        if k == 0:
+            return nums
+        self.reverse(nums, 0, n_nums)
+        self.reverse(nums, 0, k)
+        self.reverse(nums, k, n_nums)
+        return nums
+    
+    def reverse(self, arr: List[int], st: int, ed: int) -> List[int]: 
+        # Double pointer for reversing (part of) an array in place
+        # ed is exclusive
+        ed -= 1
+        while st < ed:
+            arr[st], arr[ed] = arr[ed], arr[st]
+            st += 1
+            ed -= 1
   
