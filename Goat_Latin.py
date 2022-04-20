@@ -50,3 +50,4 @@ class Solution:
             words[i] += 'a' * (i + 1)
         return ' '.join(words)
       
+# ONE-LINE SOLUTION
