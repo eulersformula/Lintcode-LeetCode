@@ -1,3 +1,5 @@
+# Lintcode 366//Naive
+
 #Find the Nth number in Fibonacci sequence.
 #A Fibonacci sequence is defined as follows:
 #The first two numbers are 0 and 1.
