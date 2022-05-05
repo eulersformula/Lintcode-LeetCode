@@ -49,14 +49,16 @@ class Solution:
                 for j in range(len(grid[0])):
                     if grid[i][j] == 1:
                         island_coord = i, j
-                        break
+                        break # 此处break只跳出当前循环，不能跳出外循环
+                if island_coord != (-1, -1):
+                    break
             if island_coord == (-1, -1):
                 break
             # grid[i][j] is 1
             # print(i,j)
             l = [island_coord]
             while len(l) > 0:
-                i, j = l.pop()
+                i, j = l.pop(0) # pop函数默认argument -1
                 if grid[i][j] == 1:
                     grid[i][j] = 0
                     if i > 0:
