@@ -1,0 +1,58 @@
+# Leetcode 1302//Medium
+
+# Given the root of a binary tree, return the sum of values of its deepest leaves.
+ 
+
+# Example 1:
+
+
+# Input: root = [1,2,3,4,5,null,6,7,null,null,null,null,8]
+# Output: 15
+# Example 2:
+
+# Input: root = [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5]
+# Output: 19
+
+# Constraints:
+
+# The number of nodes in the tree is in the range [1, 104].
+# 1 <= Node.val <= 100
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+# SOLUTION 1: BFS + level. T: O(n); S: O(n)
+class Solution(object):
+    def deepestLeavesSum(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if root is None:
+            return 0
+        node_ls = [root]
+        while len(node_ls) > 0:
+            has_children = False # 初次写该行放在了while loop外导致错误
+            next_level_node_ls = []
+            for node in node_ls:
+                if node.left is not None:
+                    next_level_node_ls.append(node.left)
+                    if not has_children:
+                        has_children = True
+                if node.right is not None:
+                    next_level_node_ls.append(node.right)
+                    if not has_children:
+                        has_children = True
+            if not has_children:
+                break
+            node_ls = next_level_node_ls
+        res = sum([node.val for node in node_ls])
+        return res
+
+# TODO: SOLUTION 2: DFS.
+
+
