@@ -1,3 +1,6 @@
+# Lintcode 6//Easy
+# Leetcode 88//Easy
+
 #Merge two given sorted integer array A and B into a new sorted integer array.
 
 #Example
