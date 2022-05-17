@@ -86,3 +86,5 @@ class Solution:
                 return i
             rule_out.add(i)
         return -1
+
+# TODO: SOLUTION 2: 优化写法 
