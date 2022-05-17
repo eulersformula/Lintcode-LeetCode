@@ -1,2 +1,3 @@
 Lintcode 1821 Min Deletions To Obtain String in Right Format
 Lintcode 1822 Minimum Moves
+Leetcode 19 Remove Nth Node From End of List: 边角情况，指针共同移动
