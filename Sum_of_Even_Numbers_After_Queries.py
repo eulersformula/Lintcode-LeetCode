@@ -28,7 +28,7 @@
 # -10^4 <= vali <= 10^4
 # 0 <= index_i < nums.length
 
-# T: O(m); S: O(1) if not considering the space to store the answer
+# T: O(n + m); S: O(1) if not considering the space to store the answer
 
 class Solution:
     def sumEvenAfterQueries(self, nums: List[int], queries: List[List[int]]) -> List[int]:
@@ -49,3 +49,6 @@ class Solution:
             ans.append(even_sum)
             nums[index] += val
         return ans
+
+       
+# 看到有答案说，有负数时，判断奇偶要注意。若采用%2的判断方式，则奇数的条件不能简单写为x % 2 == 1，因为负奇数模2为-1。但是在Python 3下无论正负奇数%2都是为-1
