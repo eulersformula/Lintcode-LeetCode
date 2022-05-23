@@ -1,3 +1,6 @@
+# Leetcode 278//Easy
+# Lintcode 74//Medium
+
 #The code base version is an integer start from 1 to n. One day, someone committed a bad version in the code case, so it caused this version and the following versions are all failed in the unit tests. Find the first bad version.
 
 #You can call isBadVersion to help you determine which version is the first bad one. The details interface can be found in the code's annotation part.
@@ -9,8 +12,8 @@
 #isBadVersion(5) -> true
 #isBadVersion(4) -> true
 
-#This problem is nearly identical to "First Position of Target", which clearly should use binary search.
-#I just can't understand why LintCode ranked the difficulty of this problem as 'Median' but the other as 'Easy'!
+# SOLUTION: 二分法查找，保证左指针指向0，右指针指向1且二者相邻，则右指针必指向第一个1
+# T: O(log n); S: O(1)
 
 #class SVNRepo:
 #    @classmethod
@@ -24,15 +27,14 @@ class Solution:
     @param n: An integers.
     @return: An integer which is the first bad version.
     """
-    def findFirstBadVersion(self, n):
-        #I am not checking if n < 1 or there is no bad version. Should ask the interviewer if asked in an interview.
+    def findFirstBadVersion(self, n: int) -> int:
+        if SVNRepo.isBadVersion(1):
+            return 1
         st, ed = 1, n
         while st < ed - 1:
-            mid = (st + ed) / 2
+            mid = (st + ed) // 2
             if SVNRepo.isBadVersion(mid):
                 ed = mid
             else:
                 st = mid
-        if SVNRepo.isBadVersion(st):
-            return st
         return ed
