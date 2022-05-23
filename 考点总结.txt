@@ -1,0 +1,8 @@
+Binary Search Tree (BST)
+0. Definition
+Binary search tree (BST) is a special form of a binary tree with the binary search properties:
+a. The value in each node must be greater than (or equal to) any values stored in its left subtree.
+b. The value in each node must be less than (or equal to) any values stored in its right subtree.
+1. Search
+Lintcode 1524[Easy]
+2. Validation 
