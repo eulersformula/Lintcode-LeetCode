@@ -1,8 +1,19 @@
-Binary Search Tree (BST)
+*Binary Tree
+1. Inorder Traversal/Level Order Traversal/Postorder Traversal/Vertical Order Traversal
+>Lintcode 67[Easy]
+>Lintcode 69[Easy]
+
+
+*Binary Search Tree (BST)
 0. Definition
 Binary search tree (BST) is a special form of a binary tree with the binary search properties:
 a. The value in each node must be greater than (or equal to) any values stored in its left subtree.
 b. The value in each node must be less than (or equal to) any values stored in its right subtree.
+a.b. -> c. Inorder traversal of a binary search tree is sorted.
+审题时注意看清是否允许相等
 1. Search
-Lintcode 1524[Easy]
-2. Validation 
+>Lintcode 1524[Easy]
+2. Validation
+>Leetcode 98[Medium], Lintcode 95[Medium]
+
+*Segment Tree
