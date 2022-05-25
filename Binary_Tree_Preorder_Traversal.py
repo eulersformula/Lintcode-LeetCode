@@ -1,3 +1,5 @@
+# Lintcode 68//Easy
+
 #Given a binary tree, return the preorder traversal of its nodes' values.
 
 #Example:
@@ -30,7 +32,7 @@ class Solution:
             return []
         return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
 
-#Method 2: Non-recursion: stack. Master this well!
+#Method 2: Non-recursion: stack
 class Solution:
     """
     @param root: The root of binary tree.
