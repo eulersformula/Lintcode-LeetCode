@@ -1,3 +1,5 @@
+# Leetcode 3//Medium
+
 #Given a string, find the length of the longest substring without repeating characters.
 
 #Example:
@@ -26,3 +28,29 @@ class Solution:
             letters[pos] = i
         maxLen = max(maxLen, len(s) - st) #Mistake 2: don't forget to check this final stage
         return maxLen
+
+# 第二次方案：T：O(n); S: O(L); L is the length of vocab
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # 错误：忘了把前面的字符从dict中抹去
+        if len(s) <= 1:
+            return len(s)
+        st = None
+        char_pos = dict()
+        max_len = 0
+        for (idx, c) in enumerate(s):
+            if st is None:
+                st = idx
+            elif c in char_pos:
+                cur_len = idx - st
+                if cur_len > max_len:
+                    max_len = cur_len
+                for cc in s[st:char_pos[c]]: #错误：tmp variable用重复
+                    char_pos.pop(cc)
+                st = char_pos[c] + 1
+            char_pos[c] = idx
+        cur_len = len(s) - st
+        if cur_len > max_len:
+            max_len = cur_len
+        return max_len
+        
