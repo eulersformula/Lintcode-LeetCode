@@ -23,13 +23,19 @@ a.b. -> c. Inorder traversal of a binary search tree is sorted.
 2. Validation
 >Leetcode 98[Medium], Lintcode 95[Medium]
 
+Data Structures
+* Linked List
+>Swap Nodes in Pairs: Lintcode 451[Easy]/Leetcode 24[Medium]
+
 Advanced Data Structures
+
 *Segment Tree
 
 *Trie (Prefix Tree)
-
->Lintcode 442[Medium] Implementation
->Lintcode 527[Hard] Serialization/Deserialization
+Implementation
+>Lintcode 442[Medium] 
+Serialization/Deserialization
+>Lintcode 527[Hard] 
 
 *Bit Operation
->Lintcode 1314/Leetcode 231[Power of Two][Easy]
+>Power of Two: Lintcode 1314[Easy]/Leetcode 231[Easy]
