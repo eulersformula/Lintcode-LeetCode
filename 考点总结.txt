@@ -42,3 +42,5 @@ Serialization/Deserialization
 
 *Permutation
 >Next Permutation: Lintcode 52[Medium]/Leetcode 31[Medium]
+BFS
+>Permutations II: Lintcode 16[Medium]
