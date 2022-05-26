@@ -39,3 +39,6 @@ Serialization/Deserialization
 
 *Bit Operation
 >Power of Two: Lintcode 1314[Easy]/Leetcode 231[Easy]
+
+*Permutation
+>Next Permutation: Lintcode 52[Medium]/Leetcode 31[Medium]
