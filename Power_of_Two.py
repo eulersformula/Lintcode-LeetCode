@@ -25,6 +25,10 @@ class Solution:
             return False
         return self.is_power_of_two(n//2)
 
-# SOLUTION 2: BIT OPERATION. T: O(log n); S: O(1)
-
+# SOLUTION 2: BIT OPERATION. T: O(1); S: O(1)
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        # 二进制仅有一位为1。减1后1位变0，右侧所有0变1
+        # 对于其他数，第一位1后仍有1，减1后首位1仍为1
+        return n and not (n & (n-1)) # 注意0和负数的情况
 
