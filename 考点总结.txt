@@ -32,4 +32,4 @@ Advanced Data Structures
 >Lintcode 527[Hard] Serialization/Deserialization
 
 *Bit Operation
->Lintcode 1314[Power of Two][Easy]
+>Lintcode 1314/Leetcode 231[Power of Two][Easy]
