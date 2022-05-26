@@ -33,7 +33,7 @@
 # Explanation:
 # Longest consecutive sequence path is 2-3,not 3-2-1, so return 2.
 
-# SOLUTION 1: RECURSION (TIME LIMIT EXCEEDED)
+# 初次SOLUTION: RECURSION (TIME LIMIT EXCEEDED)
 
 from lintcode import (
     TreeNode,
@@ -71,3 +71,38 @@ class Solution:
         return max(self.longest_consecutive_with_root(root), \
                     self.longest_consecutive(root.left), \
                     self.longest_consecutive(root.right))
+
+# 第二次SOLUTION: DFS + RECURSION. T: O(n); S: O(n)
+class Solution:
+    """
+    @param root: the root of binary tree
+    @return: the length of the longest consecutive sequence path
+    """
+            
+    def longest_consecutive(self, root: TreeNode) -> int:
+        # write your code here
+        if root is None:
+            return 0
+        from collections import deque
+        node_stack = deque([root])
+        max_val = root.val
+        recursive_nodes = []
+        while len(node_stack) > 0:
+            node = node_stack.pop()
+            if node.val > max_val: # 只要进入deque就表明该node是连续的
+                max_val = node.val
+            if node.right is not None:
+                if node.right.val == node.val + 1:
+                    node_stack.append(node.right)   
+                else:
+                    recursive_nodes.append(node.right)
+            if node.left is not None:
+                if node.left.val == node.val + 1:
+                    node_stack.append(node.left)
+                else:
+                    recursive_nodes.append(node.left)
+        max_consec = max_val - root.val + 1
+        if len(recursive_nodes) == 0:
+            return max_consec
+        max_recursive = max([self.longest_consecutive(node) for node in recursive_nodes])
+        return max(max_consec, max_recursive)
