@@ -3,3 +3,4 @@ Lintcode 1822 Minimum Moves
 Lintcode 353 Largest Letter: 大写字母可能出现在小写字母前面
 Leetcode 19 Remove Nth Node From End of List: 边角情况，指针共同移动
 Lintcode 1053 Largest Number At Least Twice of Others: 题目要求index，如何同时追踪数组里最大两个元素
+Lintcode 638 Isomorphic Strings: 题目要求No two characters may map to the same character but a character may map to itself.
