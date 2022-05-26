@@ -30,3 +30,6 @@ Advanced Data Structures
 
 >Lintcode 442[Medium] Implementation
 >Lintcode 527[Hard] Serialization/Deserialization
+
+*Bit Operation
+>Lintcode 1314[Power of Two][Easy]
