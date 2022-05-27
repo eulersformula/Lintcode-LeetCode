@@ -29,6 +29,9 @@ a.b. -> c. Inorder traversal of a binary search tree is sorted.
 >Lintcode 1524[Easy]
 2. Validation
 >Leetcode 98[Medium], Lintcode 95[Medium]
+3. Properties
+>Unique Binary Search Trees: Leetcode 96[Medium]/Lintcode 163[Medium]
+>Unique Binary Search Trees II: Leetcode 95[Medium]
 
 Data Structures
 * Linked List
