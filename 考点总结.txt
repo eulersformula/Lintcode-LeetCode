@@ -58,3 +58,5 @@ BFS
 *Union Find
 >Set Union: Lintcode 1396[Medium]
 
+*Set/Hashmap
+>Tuple with Same Product: Leetcode 1726[Medium]
