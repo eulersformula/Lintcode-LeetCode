@@ -8,9 +8,12 @@
 >Lintcode 68[Easy]
 >Lintcode 69[Easy]
 >Lintcode 878[Medium]
-2. Tree Properties/Recursion/Iteration
+2. Tree Paths/Tree Properties
+%Recursion
+%Iteration
 >Same Tree: Leetcode 100[Easy]
 >Invert Binary Tree: Leetcode 226[Easy]
+>Binary Tree Path Sum: Lintcode 376[Easy]
 3. Bottom-Up/Top-Down
 >Lintcode 596[Easy]
 
