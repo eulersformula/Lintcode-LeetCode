@@ -44,3 +44,7 @@ Serialization/Deserialization
 >Next Permutation: Lintcode 52[Medium]/Leetcode 31[Medium]
 BFS
 >Permutations II: Lintcode 16[Medium]
+
+*Union Find
+>Set Union: Lintcode 1396[Medium]
+
