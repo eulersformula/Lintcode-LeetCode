@@ -1,12 +1,13 @@
 *Binary Tree
 1. Inorder Traversal/Level Order Traversal/Postorder Traversal/Vertical Order Traversal
-%Recursive & Iterative
+2. Recursion
 %BFS/DFS
 %Get Leaf Nodes
 >Lintcode 67[Easy]
 >Lintcode 68[Easy]
 >Lintcode 69[Easy]
 >Lintcode 878[Medium]
+>Same Tree: Leetcode 100[Easy]
 2. Root needs info from subtree
 >Lintcode 596[Easy]
 
