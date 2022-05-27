@@ -1,14 +1,17 @@
 *Binary Tree
 1. Inorder Traversal/Level Order Traversal/Postorder Traversal/Vertical Order Traversal
-2. Recursion
 %BFS/DFS
+%Recursion
+%Iteration
 %Get Leaf Nodes
 >Lintcode 67[Easy]
 >Lintcode 68[Easy]
 >Lintcode 69[Easy]
 >Lintcode 878[Medium]
+2. Tree Properties/Recursion/Iteration
 >Same Tree: Leetcode 100[Easy]
-2. Root needs info from subtree
+>Invert Binary Tree: Leetcode 226[Easy]
+3. Bottom-Up/Top-Down
 >Lintcode 596[Easy]
 
 
@@ -41,7 +44,7 @@ Serialization/Deserialization
 *Bit Operation
 >Power of Two: Lintcode 1314[Easy]/Leetcode 231[Easy]
 
-*Permutation
+Permutation
 >Next Permutation: Lintcode 52[Medium]/Leetcode 31[Medium]
 BFS
 >Permutations II: Lintcode 16[Medium]
