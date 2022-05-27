@@ -48,7 +48,7 @@ class Solution:
                         res += 8
         return res
 
-# 第二次答案：T: O(n^2); S: O(n)
+# 第二次答案：T: O(n^2); S: O(n^2) worst case scenarios all pairs have different products
 class Solution:
     def tupleSameProduct(self, nums: List[int]) -> int:
         # Questions to ask:
