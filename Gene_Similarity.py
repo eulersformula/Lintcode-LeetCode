@@ -69,5 +69,45 @@ class Solution:
         return str(same) + '/' + str(len(gene1_full))
 
 # SOLUTION 2:
+class Solution:
+    """
+    @param gene1: a string
+    @param gene2: a string
+    @return: return the similarity of two gene fragments
+    """
+    # 改善：一开始就parse出所有的segments存在数组里
+    from typing import Tuple
+    def get_next_num_char(self, gene: str, idx: int) \
+                          -> Tuple[int, int, str]:
+        num_ed = idx + 1
+        while gene[num_ed] >= '0' and gene[num_ed] <= '9' and \
+              num_ed < len(gene):
+            num_ed += 1
+        return (num_ed+1, int(gene[idx:num_ed]), gene[num_ed])
 
+    def gene_similarity(self, gene1: str, gene2: str) -> str:
+        # write your code here
+        # Questions to ask:
+        # 1. Is it possible that the len of gene is 0?
+        # 2. Is it guaranteed that the two genes have the same len?
+        # 最一开始未考虑情况：可以是多位数
+        if len(gene1) == 0:
+            return '0/0'
+        idx_1, idx_2, n_1, n_2, char_1, char_2 = 0, 0, 0, 0, '', ''
+        n_same, n_chars = 0, 0
+        while not(idx_1 == len(gene1) and idx_2 == len(gene2) and \
+                  n_1 == 0 and n_2 == 0): # 一开始循环结束条件写错
+            if n_1 == 0:
+                idx_1, n_1, char_1 = self.get_next_num_char(gene1, idx_1)
+            elif n_2 == 0:
+                idx_2, n_2, char_2 = self.get_next_num_char(gene2, idx_2)
+            else:
+                to_del = min(n_1, n_2)
+                n_chars += to_del
+                if char_1 == char_2:
+                    n_same += to_del
+                n_1 -= to_del
+                n_2 -= to_del
+            # print(idx_1, n_1, char_1, idx_2, n_2, char_2, n_same, n_chars)
+        return str(n_same) + '/' + str(n_chars)
       
