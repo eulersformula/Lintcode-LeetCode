@@ -16,4 +16,5 @@ class Solution:
     @return: return a string
     """
     def reverse_words(self, str: str) -> str:
-        return ' '.join(reversed(str.split()))
+        # reversed函数只能作用于List。把字符串按每个字符转化成list用list(s)
+        return ' '.join([''.join(reversed(list(x))) for x in s.split()])
