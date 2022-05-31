@@ -1,3 +1,13 @@
+Python:
+1. 位运算优先级低于算数运算，因此要加括号。比如在binary search里，mid = st + ((ed - st) >> 1)；或者乘以2的k次方，m + (n << k)。
+相关题目：
+Binary Search: General
+Maximum Width of Binary Tree: Lintcode 1101[Medium]
+
 Graph:
-1. Undirected graph，neighbor要相互加。（Path Search: Lintcode 1647[Medium])
-2. Edge (node pair)并不一定包含所有的node，可以先根据总node的数目初始化一个空的dict以免key不在dict中。（Path Search: Lintcode 1647[Medium])
+1. Undirected graph，neighbor要相互加。
+相关题目：
+Path Search: Lintcode 1647[Medium]
+2. Edge (node pair)并不一定包含所有的node，可以先根据总node的数目初始化一个空的dict以免key不在dict中。
+相关题目：
+Path Search: Lintcode 1647[Medium]
