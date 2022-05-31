@@ -1,3 +1,6 @@
+# Leetcode 22//Medium
+# Lintcode 427//Medium//Zenefits//Uber//Google
+
 #Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
 #Example
@@ -26,3 +29,33 @@ class Solution:
                 for right in validRight:
                     res.append('(' + inside + ')' + right)
         return res
+
+# 二刷
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = [[], ['()']] # for convenience add a 0 pair res
+        for idx in range(2, n+1):
+            cur_res = set()
+            for config in res[idx-1]:
+                cur_res.add('(' + config + ')')
+            for j in range(1, idx):
+                k = idx - j
+                for left_config in res[j]:
+                    for right_config in res[k]:
+                        cur_res.add(left_config + right_config)
+            res.append(list(cur_res))
+        return res[n]
+# 稍改进（和一刷code一样）
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = [[''], ['()']] # for convenience add a 0 pair res
+        for idx in range(2, n+1):
+            cur_res = []
+            # how many pairs inside the left first pair
+            for j in range(idx):
+                for left_config in res[j]:
+                    for right_config in res[idx-j-1]:
+                        cur_res.append('(' + left_config + ')' + right_config)
+            res.append(list(cur_res))
+        return res[n]
+# DFS
