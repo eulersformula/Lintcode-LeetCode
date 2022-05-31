@@ -31,20 +31,20 @@
 # directory.check(2);
 
 class PhoneDirectory:
-  def __init__(n):
+  def __init__(n: int):
     self.numbers = set(range(n)):
   
-  def get(self):
+  def get(self) -> int:
     if len(self.numbers) > 0:
       self.numbers.pop()
     return None
   
-  def check(self, num):
+  def check(self, num: int) -> bool:
     if num in self.numbers:
       return False
     return true
   
-  def release(self, num):
+  def release(self, num: int):
     self.numbers.add(num)
   
   
