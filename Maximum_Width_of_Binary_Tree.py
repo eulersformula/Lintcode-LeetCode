@@ -97,3 +97,5 @@ class Solution:
                     cur_queue.append((node.right, (idx<<1)+1)) # python里位运算优先级低于arithmetic
             queue = cur_queue
         return max_width
+
+# TODO: deque动态更改queue、DFS方法
