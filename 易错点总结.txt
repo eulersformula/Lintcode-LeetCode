@@ -1,0 +1,3 @@
+Graph:
+1. Undirected graph，neighbor要相互加。（Path Search: Lintcode 1647[Medium])
+2. Edge (node pair)并不一定包含所有的node，可以先根据总node的数目初始化一个空的dict以免key不在dict中。（Path Search: Lintcode 1647[Medium])
