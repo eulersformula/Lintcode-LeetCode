@@ -22,6 +22,8 @@
 # 1 <= nums.length <= 2500
 # -10^4 <= nums[i] <= 10^4
 
+# Follow-up: solve in O(nlog(n)) time complexity
+
 # 第一次解法：
 from collections import deque
 class Solution:
@@ -63,3 +65,6 @@ class Solution:
             # print(stack, res)
         return res
             
+# 最优解： Insert Position
+# 本题最后有一个进阶问题，能不能O(n log n) 解决？有。
+# 维护一个单调递增序列，遍历数组，二分查找每一个数在单调序列中的位置，然后替换之。
