@@ -23,6 +23,8 @@
 # 1 <= m * n <= 10^5
 # -10^9 <= matrix[i][j] <= 10^9
 
+# T: O(n); S: O(1) 输出不算空间复杂度
+
 class Solution:
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
         n = len(matrix)
