@@ -1,5 +1,5 @@
 Matrix Manipulation
->Transpose Matrix: Leetcode 867[Easy]【易错题】
+>Transpose Matrix: Lintcode 1501[Easy]/Leetcode 867[Easy]【易错题】
 
 *Parentheses
 0. A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
