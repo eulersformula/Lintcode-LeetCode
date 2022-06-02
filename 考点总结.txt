@@ -1,3 +1,7 @@
+*Parentheses
+0. A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
+
+
 *Binary Tree
 1. Inorder Traversal/Level Order Traversal/Postorder Traversal/Vertical Order Traversal
 %BFS/DFS
