@@ -33,11 +33,13 @@ a. The value in each node must be greater than (or equal to) any values stored i
 b. The value in each node must be less than (or equal to) any values stored in its right subtree.
 a.b. -> c. Inorder traversal of a binary search tree is sorted.
 审题时注意看清是否允许相等
-1. Search
->Lintcode 1524[Easy]
+1. Search/Insert/Delete
+>Search In a Binary Search Tree: Lintcode 1524[Easy]/Leetcode 700[Easy]
+>Insert into a Binary Search Tree: Leetcode 701[Medium]
 2. Validation
 >Leetcode 98[Medium], Lintcode 95[Medium]
 3. Properties
+>Closest Binary Search Tree Value: Lintcode 900[Easy]/Leetcode 270[Easy]
 >Unique Binary Search Trees: Leetcode 96[Medium]/Lintcode 163[Medium]
 >Unique Binary Search Trees II: Leetcode 95[Medium]
 
