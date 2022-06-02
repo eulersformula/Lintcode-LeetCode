@@ -148,3 +148,5 @@ class MyStack: # S: O(n)
 
     def empty(self) -> bool: # T: O(1)
         return self.queue.empty()
+
+# 另一种解法:
