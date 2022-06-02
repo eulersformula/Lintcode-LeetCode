@@ -1,5 +1,6 @@
 *Parentheses
 0. A valid parentheses string is either empty "", "(" + A + ")", or A + B, where A and B are valid parentheses strings, and + represents string concatenation.
+>Remove the Invalid Parentheses: Lintcode 2506[Easy]【易错题】
 
 
 *Binary Tree
