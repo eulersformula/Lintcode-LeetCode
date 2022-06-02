@@ -49,3 +49,29 @@ class Solution:
             if len(v) == 0:
                 max_len = max(max_len, l)
         return max_len
+
+# DP解法： T: O(n); S: O(n)
+class Solution:
+    def longestValidParentheses(self, s: str) -> int:
+        if len(s) <= 1:
+            return 0
+        max_len = 0
+        # the longest valid substring ending in index i
+        tmp = [0] * len(s)
+        for i in range(1, len(s)):
+            # print(i)
+            # nothing to do for i == 0
+            # nothing to do if ss == '(' since it is not valid to end here
+            if s[i] == ')':
+                if s[i-1] == '(':
+                    tmp[i] = 2 + tmp[i-2] if i >= 2 else 2
+                else:
+                    # s[i-1] == ')', valid from (i-tmp[i-1]) to (i-1)
+                    # look at (i-tmp[i-1]-1)
+                    idx_to_look = i - tmp[i-1] - 1
+                    if idx_to_look >= 0 and s[idx_to_look] == '(':
+                        tmp[i] = tmp[i-1] + 2
+                        if idx_to_look - 1 >= 0:
+                            tmp[i] += tmp[idx_to_look-1]
+                max_len = max(max_len, tmp[i])
+        return max_len
