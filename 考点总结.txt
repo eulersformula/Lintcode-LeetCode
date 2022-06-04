@@ -7,7 +7,7 @@ Matrix Manipulation
 >Remove the Invalid Parentheses: Lintcode 2506[Easy]【易错题】
 
 
-*Binary Tree
+*Binary Tree/N-ary Tree
 1. Inorder Traversal/Level Order Traversal/Postorder Traversal/Vertical Order Traversal
 %BFS/DFS
 %Recursion
@@ -17,6 +17,7 @@ Matrix Manipulation
 >Lintcode 68[Easy]
 >Lintcode 69[Easy]
 >Lintcode 878[Medium]
+>N-ary Tree Level Order Traversal: Lintcode 1533[Easy]
 >Max Width of Binary Tree: Lintcode 1101[Medium]
 2. Tree Paths/Tree Properties
 %Recursion
