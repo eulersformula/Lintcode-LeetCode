@@ -1,4 +1,7 @@
-A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. Specially, empty string is a subsequence of any string by removing all characters in the string.
+*How to initialize a set with an empty tuple: set([tuple()]). set(tupe()) will evaluate to empty set().
+*Set/List/Dictionary cannot be changed in iteration.
+
+*A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. Specially, empty string is a subsequence of any string by removing all characters in the string.
 
 Matrix Manipulation
 >Transpose Matrix: Lintcode 1501[Easy]/Leetcode 867[Easy]【易错题】
