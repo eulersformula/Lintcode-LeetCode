@@ -14,7 +14,7 @@
 from typing import (
     List,
 )
-# Solution 1: DFS. T: O(n); S: O(1) 【易错，多练】
+# Solution 1: DFS. T: O(n) = O(2m-2) = O(m); S: O(1); n为矩阵里1的个数，m为矩阵列数，每列两个1除了首尾【易错，多练】
 from collections import deque
 class Solution:
     """
@@ -74,3 +74,27 @@ class Solution:
                     max_d = max(max_d, x)
                     break
         return max_d
+
+# Solution 2: Binary Search. T: O(mlog n); S: O(1); n为行数，m为列数。 
+class Solution:
+    """
+    @param matrix: the matrix in problem
+    @return: the depth of the tunnel.
+    """
+    def find_depth(self, matrix: List[List[int]]) -> int:
+        n_rows = len(matrix)
+        if n_rows == 1:
+            return 0
+        n_cols = len(matrix[0])
+        if n_cols == 1:
+            return 0
+        st, ed = 0, n_rows - 1
+        while st < ed - 1:
+            mid = (st + ed) // 2
+            if sum(matrix[mid]) <= 0:
+                ed = mid
+            else:
+                st = mid
+        if sum(matrix[ed]) > 0:
+            return ed
+        return st
