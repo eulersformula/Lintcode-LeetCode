@@ -91,7 +91,8 @@ class Solution:
         st, ed = 0, n_rows - 1
         while st < ed - 1:
             mid = (st + ed) // 2
-            if sum(matrix[mid]) <= 0:
+            # 一开始写的次优写法：if sum(matrix[mid]) <= 0:
+            if 1 not in matrix[mid]:
                 ed = mid
             else:
                 st = mid
