@@ -91,4 +91,62 @@ class MaxStack:
             prev_element = self.stack[idx]
         self.length -= 1
         return self.stack.pop(max_idx)[0]
-        
+
+# 单调栈版本
+class MaxStack:
+    
+    def __init__(self):
+        # do intialization if necessary
+        self.stack = []
+        self.maxStack = []
+    
+    """
+    @param: number: An integer
+    @return: nothing
+    """
+    def push(self, x):
+        # write your code here
+        if len(self.maxStack) == 0 or x >= self.maxStack[-1]:
+            self.maxStack.append(x)
+        self.stack.append(x)
+        # print(self.stack, self.maxStack)
+
+    """
+    @return: An integer
+    """
+    def pop(self): # 要求return top element
+        # write your code here
+        val = self.stack.pop()
+        if val == self.maxStack[-1]:
+            self.maxStack.pop()
+        return val
+    """
+    @return: An integer
+    """
+    def top(self):
+        # write your code here
+        return self.stack[-1]
+
+    """
+    @return: An integer
+    """
+    def peekMax(self):
+        # write your code here
+        return self.maxStack[-1]
+
+    """
+    @return: An integer
+    """
+    def popMax(self): # 题目没说清是否要返回pop值。但例子中有说明
+        # write your code here
+        # 此处每次pop后要用pop元素之后的值重新更新一边stack和max stack。
+        # 比如[1, 5, 1, 5]在popMax两次以后，最大值栈已清空
+        tmpStack = []
+        v = self.stack.pop()
+        while v != self.maxStack[-1]:
+            tmpStack.append(v)
+            v = self.stack.pop()
+        v = self.maxStack.pop()
+        while len(tmpStack) > 0:
+            self.push(tmpStack.pop())
+        return v
