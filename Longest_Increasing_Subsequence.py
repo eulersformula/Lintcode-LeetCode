@@ -64,7 +64,20 @@ class Solution:
                 res = max_prev_nums + 1
             # print(stack, res)
         return res
-            
+
+# 三刷: T: O(n^2); S: O(n)
+class Solution:
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        len_nums = len(nums)
+        if len_nums <= 1:
+            return len_nums
+        num_cnts = [1] * len(nums)
+        for idx in range(1, len(nums)):
+            for j in range(idx):
+                if nums[j] < nums[idx] and num_cnts[j] >= num_cnts[idx]:
+                    num_cnts[idx] = num_cnts[j] + 1
+        return max(num_cnts)
+       
 # 最优解： Insert Position
 # 本题最后有一个进阶问题，能不能O(n log n) 解决？有。
 # 维护一个单调递增序列，遍历数组，二分查找每一个数在单调序列中的位置，然后替换之。
