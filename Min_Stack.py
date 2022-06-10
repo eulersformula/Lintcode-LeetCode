@@ -1,19 +1,19 @@
-# Lintcode 12//Medium
+# Lintcode 12//Medium//Google//Uber//...
 
-#Implement a stack with min() function, which will return the smallest number in the stack.
+# Description
 
-#It should support push, pop and min operation all in O(1) cost.
+# Implement a stack with min() function, which will return the smallest number in the stack.
 
-#Example
-#push(1)
-#pop()   // return 1
-#push(2)
-#push(3)
-#min()   // return 2
-#push(1)
-#min()   // return 1
+# It should support push, pop and min operation all in O(1) cost.
 
-#Idea is to use two stacks: one to keep the whole sequence, the other to update minimum number
+# Example
+# push(1)
+# pop()   // return 1
+# push(2)
+# push(3)
+# min()   // return 2
+# push(1)
+# min()   // return 1
 
 class MinStack(object):
 
@@ -71,6 +71,28 @@ class MinStack:
     def min(self):
         # return the minimum number in stack
         return self.stack2[-1]
- 
 
+# 单调栈版本
+class MinStack:
+
+    def __init__(self):
+        self.stack = []
+        self.min_vals = [] # 从开始到当前元素的最小值
+        
+
+    def push(self, val: int) -> None:
+        if len(self.stack) == 0 or val <= self.min_vals[-1]:
+            self.min_vals.append(val)
+        self.stack.append(val)
+
+    def pop(self) -> None:
+        val = self.stack.pop()
+        if val == self.min_vals[-1]:
+            self.min_vals.pop()
+        
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return self.min_vals[-1]
 
