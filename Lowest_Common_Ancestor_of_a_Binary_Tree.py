@@ -95,4 +95,41 @@ class Solution:
                 break
         return res
 
-# SOLUTION 2: RECURSION
+# SOLUTION 2: RECURSION. T: O(n); S: O(h).
+class Solution:
+    """
+    @param: root: The root of the binary search tree.
+    @param: A: A TreeNode in a Binary.
+    @param: B: A TreeNode in a Binary.
+    @return: Return the least common ancestor(LCA) of the two nodes.
+    """
+    def dfs(self, node, target, ancestors):
+        if node == target:
+            return ancestors + [target]
+        if node is None:
+            return []
+        cur_path = ancestors + [node]
+        # 可以两边都不是
+        left_res = self.dfs(node.left, target, cur_path)
+        if len(left_res) > 0:
+            return left_res
+        right_res = self.dfs(node.right, target, cur_path)
+        if len(right_res) > 0:
+            return right_res
+        return []
+
+    def lowestCommonAncestor(self, root, A, B):
+        # write your code here
+        # Questions to ask:
+        # 1. Is it possible that A or/and B is not in the tree?
+        # 2. Can A and B be the same node? If so, should this node just be returned?
+        # 3. If one node is a parent of the other, should this parent node be returned?
+        if root == None:
+            return None
+        ancestors_A = self.dfs(root, A, [])
+        ancestors_B = self.dfs(root, B, [])
+        min_len = min(len(ancestors_A), len(ancestors_B))
+        for idx in range(1, min_len):
+            if ancestors_A[idx] != ancestors_B[idx]:
+                return ancestors_A[idx-1]
+        return ancestors_A[min_len-1]
