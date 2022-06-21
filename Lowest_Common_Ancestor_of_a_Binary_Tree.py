@@ -149,3 +149,28 @@ class Solution:
         if self.inTree(root.right, p) and self.inTree(root.right, q):
             return self.lowestCommonAncestor(root.right, p, q)
         return root
+
+# 非recursion dfs
+class Solution:
+    def findPath(self, root: 'TreeNode', node: 'TreeNode') -> List['TreeNode']:
+        stack = [(root, [root])]
+        while len(stack) > 0:
+            cur_node, cur_path = stack.pop()
+            if cur_node == node:
+                return cur_path
+            if cur_node.right is not None:
+                stack.append((cur_node.right, cur_path+[cur_node.right]))
+            if cur_node.left is not None:
+                stack.append((cur_node.left, cur_path+[cur_node.left]))
+            # print([[node.val for node in ls[1]] for ls in stack])
+        return []
+    
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        p_path = self.findPath(root, p)
+        q_path = self.findPath(root, q)
+        idx = 1
+        while idx < min(len(p_path), len(q_path)):
+            if p_path[idx] != q_path[idx]:
+                return p_path[idx-1]
+            idx += 1
+        return p_path[idx-1]
