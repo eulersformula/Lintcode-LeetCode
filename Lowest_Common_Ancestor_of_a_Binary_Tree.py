@@ -133,3 +133,19 @@ class Solution:
             if ancestors_A[idx] != ancestors_B[idx]:
                 return ancestors_A[idx-1]
         return ancestors_A[min_len-1]
+
+# 一个TLE写法
+class Solution:
+    def inTree(self, root: 'TreeNode', node: 'TreeNode') -> bool:
+        if root is None:
+            return False
+        if root == node:
+            return True
+        return self.inTree(root.left, node) or self.inTree(root.right, node)
+        
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if self.inTree(root.left, p) and self.inTree(root.left, q):
+            return self.lowestCommonAncestor(root.left, p, q)
+        if self.inTree(root.right, p) and self.inTree(root.right, q):
+            return self.lowestCommonAncestor(root.right, p, q)
+        return root
