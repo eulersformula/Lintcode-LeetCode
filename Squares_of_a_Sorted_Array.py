@@ -1,4 +1,5 @@
 # Lintcode 1901//Easy//ByteDance
+# Leetcode 977//Easy
 
 # Description
 # Given an array of integers A sorted in non-decreasing order, return an array of the squares of each number, also in sorted non-decreasing order.
@@ -47,4 +48,27 @@ class Solution:
                 res[idx] = a[ed] * a[ed]
                 ed -= 1
             idx -= 1
+        return res
+
+# 再刷搞了一个从小到大的版本
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        min_abs_idx, min_abs = 0, abs(nums[0])
+        for idx in range(1, len(nums)):
+            if abs(nums[idx]) < min_abs:
+                min_abs_idx, min_abs = idx, abs(nums[idx])
+        left, right = min_abs_idx, min_abs_idx+1
+        print(left, right)
+        res = []
+        while left >= 0 and right < len(nums):
+            if abs(nums[left]) <= abs(nums[right]):
+                res.append(nums[left]*nums[left])
+                left -= 1
+            else:
+                res.append(nums[right]*nums[right])
+                right += 1
+        if left < 0:
+            res += [x*x for x in nums[right:]]
+        else:
+            res += [x*x for x in nums[:(left+1)][::-1]]
         return res
