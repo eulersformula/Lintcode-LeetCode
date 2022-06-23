@@ -1,4 +1,5 @@
 # Lintcode 1181//Easy//Facebook//Google
+# Leetcode 543//Easy
 
 # Description
 # Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree.
@@ -67,5 +68,19 @@ class Solution:
             return 1 + self.depth_of_binary_tree(root.left)
         return 2 + self.depth_of_binary_tree(root.left) + self.depth_of_binary_tree(root.right)
 
-      
- # TODO: BFS solution
+# 二刷：T: O(n); S: O(h), worst case O(n)
+class Solution:
+    def helper(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return (0, 0)
+        left_max_depth, left_max_diameter = self.helper(root.left)
+        right_max_depth, right_max_diameter = self.helper(root.right)
+        max_depth = 1 + max(left_max_depth, right_max_depth)
+        max_diameter = left_max_depth + right_max_depth
+        max_diameter = max(max_diameter, left_max_diameter, right_max_diameter)
+        # print('node val', root.val, max_depth, max_diameter)
+        return (max_depth, max_diameter)
+    
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        return self.helper(root)[1]
+ 
