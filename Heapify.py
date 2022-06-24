@@ -26,7 +26,7 @@ class Solution:
     @return: nothing
     """
     # For index i, maximum time complexity is O(h_i) = O(log i)
-    # Total time complexity is O(log n!) ~ O(n)
+    # Total time complexity is O(log n!) ~ O(n logn)
     def heapify(self, a: List[int]):
         # write your code here
         for idx in range(len(a)): # if a is empty nothing executed
