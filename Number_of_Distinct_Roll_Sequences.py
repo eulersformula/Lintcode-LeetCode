@@ -29,7 +29,8 @@
 
 # 1 <= n <= 10^4
 
-# 一开始的错误解法
+# 一开始的错误解法: 同时记录t时刻和(t-1)时刻以i结尾的符合条件sequence的个数。在(t+1)时刻，用符合条件的t时刻的sequence数目减去(t-1)时刻与(t+1)时刻结尾字符相同的sequence数目。
+# 错误原因：t时刻的sequence并未包含(t-1)时刻的某些sequence。比如(t-1)时刻(..., 2, 1)并不会在(t-2)时刻的以2结尾的sequence中（即不存在(..., 2, 1, 2)）
 class Solution:
     def distinctSequences(self, n: int) -> int:
         # x[i] = 1; x[i-1] = 2,3,4,5,6; x[i-2] != 1
@@ -62,3 +63,37 @@ class Solution:
             res[1] = tmp
             print(res)
         return sum(res[1])
+
+class Solution:
+    def distinctSequences(self, n: int) -> int:
+        # x[i] = 1; x[i-1] = 2,3,4,5,6; x[i-2] != 1
+        # x[i] = 2; x[i-1] = 1,3,5; x[i-2]!=2
+        # x[i] = 3; x[i-1] = 1,2,4,5; x[i-2]!=3
+        # x[i] = 4; x[i-1] = 1,3,5; x[i-2]!=4
+        # x[i] = 5; x[i-1] = 1,2,3,4,6; x[i-2] != 5
+        # x[i] = 6; x[i-1] = 1,5; x[i-2] != 5
+        # n = 1: [1, 1, 1, 1, 1, 1]
+        # n = 2: [5, 3, 4, 3, 5, 2]
+        if n == 1:
+            return 6
+        valid_prev_num = {1:[2,3,4,5,6]}
+        valid_prev_num.update({2:[1,3,5]})
+        valid_prev_num.update({3:[1,2,4,5]})
+        valid_prev_num.update({4:[1,3,5]})
+        valid_prev_num.update({5:[1,2,3,4,6]})
+        valid_prev_num.update({6:[1,5]})
+        res = [[0 for _ in range(6)] for _ in range(6)] # stores the last two numbers
+        for i in valid_prev_num:
+            for j in valid_prev_num[i]:
+                res[i-1][j-1] = 1
+        # print(res)
+        # print(sum(sum(x) for x in res))
+        for _ in range(n-2):
+            tmp = [[0 for _ in range(6)] for _ in range(6)]
+            for i in valid_prev_num:
+                for j in valid_prev_num[i]:
+                    tmp[i-1][j-1] += sum(res[j-1][k-1] for k in valid_prev_num[j] if i != k)
+            res = tmp
+            # print(res)
+            # print(sum(sum(x) for x in res))
+        return sum(sum(x) for x in res) % int(1e9+7)
